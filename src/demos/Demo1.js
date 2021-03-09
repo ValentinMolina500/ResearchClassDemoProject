@@ -20,7 +20,7 @@ function Demo1() {
       <h1>Number of Assignments Procrastinated</h1>
 
       {/* Render current value of counter */}
-      <p>Current Value: {counter}</p>
+      <p>Current Value: </p>
 
       {/* Render buttons to interact with counter */}
       <button onClick={increment}>Increment</button>
