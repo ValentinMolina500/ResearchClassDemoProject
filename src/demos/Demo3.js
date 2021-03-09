@@ -1,19 +1,22 @@
 // demo 3: data rendering and mutable lists
 
 import React, { useState } from "react";
-import quotes from "./quotes.json";
+
+// Import database of quotes
+import QUOTES_DATABASE from "./quotes.json";
 
 // Import our custom React component 
 import QuoteList from "./QuoteList";
 
 function Demo3(props) {
   const [customQuotes, setCustomQuotes] = useState([]);
-  const [quoteText, setQuoteText] = useState("");
-  const [quoteAuthor, setQuoteAuthor] = useState("Anonymous");
 
+  // TODO: add quote author state variable
+  const [quoteText, setQuoteText] = useState("");
+  
+ 
   const resetInputs = () => {
-    setQuoteAuthor("");
-    setQuoteText("");
+    // TODO: reset inputs back to "" 
   }
 
   const onAddQuote = () => {
@@ -21,14 +24,13 @@ function Demo3(props) {
     // Create quote object
     const quote = {
       text: quoteText,
-      author: quoteAuthor
+      author: "Anonymous"
     };
 
     // Add it to the list (syntax is funky)
     setCustomQuotes(oldQuotes => [...oldQuotes, quote]);
 
-    // Reset inputs 
-    resetInputs();
+    // Reset inputs here
   }
 
   return (
@@ -36,7 +38,9 @@ function Demo3(props) {
       <h1>Super Cool Quotes</h1>
 
       <h3>Built in quotes</h3>
-      <QuoteList quotes={quotes} />
+
+      {/* Pass in quotes database as a prop */}
+      <QuoteList />
       <hr />
       
       <h3>Custom quotes</h3>
@@ -46,8 +50,6 @@ function Demo3(props) {
       <label>Add your own quotes</label>
       <br />
       <input placeholder="Quote text" onChange={e => setQuoteText(e.target.value)} value={quoteText} />
-      <br />
-      <input placeholder="Quote author" onChange={e => setQuoteAuthor(e.target.value)} value={quoteAuthor} />
       <br />
       <button onClick={onAddQuote}>Add</button>
     </div>

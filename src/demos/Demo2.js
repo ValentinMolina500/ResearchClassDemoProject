@@ -1,12 +1,12 @@
 // demo 2: basic calculator
 
-import React from "react";
+import React, { useState } from "react";
 
 function Demo1() {
   // Create state for result
-  const [result, setResult] = React.useState("");
-  const [firstInput, setFirstInput] = React.useState(0);
-  const [secondInput, setSecondInput] = React.useState(0);
+  const [result, setResult] = useState("");
+  const [firstInput, setFirstInput] = useState(0);
+  const [secondInput, setSecondInput] = useState(0);
 
   /* Handle when user types into inputs */
   const onFirstInputChanged = (e) => {
@@ -35,26 +35,25 @@ function Demo1() {
     setSecondInput(value);
   }
 
-  // Create functions for arithmetic
+
   const resetInputs = () => {
-    setFirstInput(0);
-    setSecondInput(0);
+    /* TODO: Reset value of inputs to 0 */
   }
 
+  // Create functions for arithmetic
   const add = () => {
-    setResult(firstInput + secondInput);
-    resetInputs();
+    // TODO: add input values, set result, and reset inputs 
   }
 
   const multiply = () => {
-    setResult(firstInput * secondInput);
-    resetInputs()
+    // TODO: multiply input values, set result, and reset inputs 
   }
 
   const subtract = () => {
-    setResult(firstInput - secondInput);
-    resetInputs();
+    // TODO: subtract input values, set result, and reset inputs 
   }
+
+  // TODO: Add a function to divide for numbers (no need to check for divide by 0)
 
   return (
     <div>
@@ -78,6 +77,9 @@ function Demo1() {
       <button onClick={add}>ADD</button>
       <button onClick={subtract}>SUBTRACT</button>
       <button onClick={multiply}>MULTIPLY</button>
+
+      {/* TODO: Add button for division */}
+
     </div>
   );
 }

@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 
 function Demo4() {
-  const [value, setValue] = useState(0);
-  const [result, setResult] = useState(0);
 
   const onValueChange = (e) => {
     let input;
@@ -16,23 +14,13 @@ function Demo4() {
       input = Number(e.target.value);
     }
 
-    setValue(input);
+    // set value of input here 
   }
 
-  const onConvert = () => {
-    const convertedValue = (value - 32) * (5/9);
-    setResult(convertedValue);
-  }
   return (
     <div>
       <h1>Fahrenheit Converter</h1>
       <p><i>Those pesky Celsius values...</i></p>
-      <p>Result = {result}°C</p>
-      <p></p>
-      <label>Fahrenheit</label>
-      <br />
-      <input onChange={onValueChange} type="number"></input>
-      <button onClick={onConvert}>Convert</button>
     </div>
   );
 }

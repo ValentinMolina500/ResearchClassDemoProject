@@ -1,18 +1,18 @@
 // demo 1: simple coun// demo 1: simple counter
 
-import React from "react";
+import React, { useState } from "react";
 
 function Demo1() {
   // Create state for the counter 
-  const [counter, setCounter] = React.useState(0);
+  const [counter, setCounter] = useState(0);
   
   // Create two functions
   const increment = () => {
-    setCounter(counter + 1);
+    // TODO: Add way to increment counter state 
   }
 
   const decrement = () => {
-    setCounter(counter - 1);
+    // TODO: Add way to decrement counter state 
   }
 
   return (
